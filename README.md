@@ -1,4 +1,4 @@
-## WEB SCRAPER PARA PUXAR DADOS UTILIZANDO A API DO SIDRA -- IBGE:
+## WEB SCRAPER (BOT):
 
 Este projeto consiste em um robô que consome dados do IPCA no IBGE através de uma requisição HTTP ao endpoint JSON fornecido. Os dados capturados são convertidos para um DataFrame utilizando a biblioteca pandas e, posteriormente, salvos em um arquivo no formato Parquet, garantindo armazenamento eficiente e estruturado.
 

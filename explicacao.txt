@@ -1,0 +1,28 @@
+
+Problema central: Inexistência de um link direto para captura dos dados em JSON.
+
+Resolução: No caso de não haver um link direto que permita capturar os dados sem interações, é necessário utilizar algumas bibliotecas que foram disponibilizadas com intuito de simular as interações humanas, já que, nesse caso, teríamos que navegar através de botões e menus para chegar até à página que hospeda os dados requeridos.
+Os passos que podem ser seguidos são:
+
+**Primeiro: Análise da página**
+   - Utilizo ferramentas de desenvolvedor do navegador (como o "Inspecionar Elemento" no Google Chrome ou outro navegador) para compreender como os dados são     carregados.
+   - Verifico se os dados são carregados através de requisições AJAX, ou se há necessidade de interagir com formulários, menus ou autenticação, por exemplo.
+
+**Segundo: Uso do selenium para automatizar**
+   - Quando não existe um link direto, a lib `selenium` pode ser utilizada para automatizar o processo de simulação de interações humanas;
+ 
+**Terceiro: Exemplo de passos automatizados**
+   - Abrir o navegador e acessar a página inicial do site.
+   - Selecionar os parâmetros desejados através de menus suspensos ou checkboxes.
+   - Clicar no botão para gerar ou baixar os dados.
+   - Aguardar o carregamento da página ou o download do arquivo.
+
+**Quarto: Captura dos dados**
+   - Se o arquivo baixado for no formato CSV, por exemplo, utilizo bibliotecas como `pandas` ou, dependendo do tamanho do arquivo, utilizo PySpark para processá-lo.
+   - Caso os dados sejam exibidos na página, faço a captura do conteúdo da tabela usando `BeautifulSoup` para extrair os elementos HTML importantes.
+
+**Quinto: Armazenamento dos dados**
+   - Após a captura, organizo os dados em formato tabular (crio um DataFrame armazenando esses dados) e salvo em um arquivo no formato desejado, como Parquet que, por sua vez, é mais otimizado caso seja utilizado no Spark, para armazenamento mais eficiente.
+
+Observações finais:
+   - É importante verificar se o site permite esse tipo de automação, respeitando os termos de uso, e cuidar para não sobrecarregar o servidor.

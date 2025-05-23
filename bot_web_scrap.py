@@ -57,7 +57,7 @@ def main():
     url = "https://sidra.ibge.gov.br/Ajax/Json/Tabela/1/1737?versao=-1"
     save_dir = r"C:\Users\Samsung\OneDrive\Documentos\ipca\metadados"
     os.makedirs(save_dir, exist_ok=True)
-    save_path = os.path.join(save_dir, "metadados_completo.parquet")
+    save_path = os.path.join(save_dir, "metadados.parquet")
 
     print("Capturando metadados...")
     metadata_json = metadata_capture(url)

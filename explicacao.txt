@@ -1,7 +1,11 @@
 Problema central: Inexistência de um link direto para captura dos dados em JSON.
 
-Resolução: No caso de não haver um link direto que permita capturar os dados sem interações, é necessário utilizar algumas bibliotecas que foram disponibilizadas com intuito de simular as interações humanas, já que, nesse caso, teríamos que navegar através de botões e menus para chegar até à página que hospeda os dados requeridos.
-
-O primeiro passo é analisar a página solicitada com as ferramentas de desenvolvedor do navegador, observando como os dados são carregados, se por requisições AJAX ou por interações como formulários ou menus. Caso seja necessário automatizar o processo, pode ser feito o uso de bibliotecas como o Selenium para simular essas ações: navegar até a página, selecionar os parâmetros desejados, clicar nos botões indicados e aguardar o carregamento ou o download do arquivo. Se o dado for baixado em CSV, é possível tratá-lo com pandas, ou com PySpark se for um volume muito grande. Quando as informações estão apenas na página, é possível fazer a extração com BeautifulSoup, focando nos elementos HTML relevantes. Depois é possível organizar tudo em um DataFrame e salvar no formato mais adequado, geralmente Parquet, por ser mais eficiente para uso posterior no Spark. 
+Resolução: No caso de não haver um link direto que permita capturar os dados sem interações, é necessário utilizar algumas bibliotecas que foram disponibilizadas com intuito de simular as
+interações humanas, já que, nesse caso, teríamos que navegar através de botões e menus para chegar até à página que hospeda os dados requeridos.
+O primeiro passo é analisar a página solicitada com as ferramentas de desenvolvedor do navegador, observando como os dados são carregados, se por requisições AJAX ou por interações como
+formulários ou menus. Caso seja necessário automatizar o processo, pode ser feito o uso de bibliotecas como o Selenium para simular essas ações: navegar até a página, selecionar os
+parâmetros desejados, clicar nos botões indicados e aguardar o carregamento ou o download do arquivo. Se o dado for baixado em CSV, é possível tratá-lo com pandas, ou com PySpark se for um
+volume muito grande. Quando as informações estão apenas na página, é possível fazer a extração com BeautifulSoup, focando nos elementos HTML relevantes. Depois é possível organizar tudo em
+um DataFrame e salvar no formato mais adequado, geralmente Parquet, por ser mais eficiente para uso posterior no Spark. 
 
 ps: importante sempre respeitar os termos de uso do site e evitar sobrecarregar o servidor.
